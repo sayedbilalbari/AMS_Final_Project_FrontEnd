@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Insights</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Updated CSS file -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Intro Overlay -->
+  <div id="introOverlay">
+    <div id="introContent">
+      <h1>Group 7: Unlocking Academic Insights</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section-container">
+      <div class="left-section">
+        <h2>Upload Papers</h2>
+        <div class="file-upload-container">
+          <input type="file" id="fileUpload" accept="application/pdf">
+          <button id="addFileButton">Add File</button>
+        </div>
+        <ul id="fileList"></ul>
+        <button id="createKGButton" class="create-kg-btn">Create KG Graph</button>
+      </div>
+    </div>
+
+    <!-- Modal for KG Graph Output -->
+    <div id="kgGraphModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>KG Graph Output</h2>
+        <div id="spinner" class="spinner-overlay">
+          <div class="spinner"></div>
+          <p>Loading KG Graph...</p>
+        </div>
+        <table id="kgGraphTable"></table>
+      </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="middle-section">
+      <div class="chat-header">
+        <h2>LLM Responses</h2>
+        <button class="fullscreen-btn" data-target="middle-section">&#x26F6;</button>
+      </div>
+      <label for="llmSelect">Select LLM:</label>
+      <select id="llmSelect">
+        <option value="chatgpt" selected>ChatGPT</option>
+        <option value="groq">Llama 3</option>
+      </select>
+      <div class="chat-box" id="middle-chat-box">
+        <div id="chatGPTResponses" class="chat-log"></div>
+        <div class="chat-input">
+          <input type="text" id="chatGPTQuestion" placeholder="Ask a question...">
+          <button id="chatGPTSend">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="chat-header">
+        <h2>Our Model Responses</h2>
+        <button class="fullscreen-btn" data-target="right-section">&#x26F6;</button>
+      </div>
+      <div class="chat-box" id="right-chat-box">
+        <div id="customResponses" class="chat-log"></div>
+        <div class="chat-input">
+          <input type="text" id="customQuestion" placeholder="Ask a question...">
+          <button id="customSend">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Updated script file -->
+  <script src="/script.js"></script>
+</body>
+</html>
